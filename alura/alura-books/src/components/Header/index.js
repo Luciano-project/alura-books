@@ -2,6 +2,7 @@ import HeaderOptions from '../HeaderOptions/index'
 import HeaderIcons from '../HeaderIcons/index'
 import Logo from '../Logo/logo'
 import styled from 'styled-components'
+import { Link } from 'react-router-dom'
 
 // This is the setup for the HeaderContainer
 // Using this way, we are able to style the HeaderContainer
@@ -14,7 +15,9 @@ function Header ()
 {
     return(
         <HeaderContainer>
-            <Logo />
+            <Link to="/">
+                <Logo />
+            </Link>
             <HeaderOptions />
             <HeaderIcons />
         </HeaderContainer>

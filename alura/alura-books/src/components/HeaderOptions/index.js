@@ -1,6 +1,6 @@
 import styled from 'styled-components';
-
-const headerNames = ['CATEGORIAS', 'FAVORITOS', 'ESTANTE'];
+import { Link } from 'react-router-dom';
+const headerNames = ['CATEGORIES', 'FAVORITES', 'LIBRARY'];
 
 const HeaderOptionsContainer = styled.ul`
     display: flex;
@@ -18,13 +18,16 @@ const HeaderOptionContainer = styled.li`
     padding: 10px 5px;
     cursor: pointer;
 `
-
 function HeaderOptions()
 {
     return(
         <HeaderOptionsContainer>
         { headerNames.map( (item) => (
-        <HeaderOptionContainer><p>{item}</p></HeaderOptionContainer>
+        <Link to={`/${ item.toLowerCase() }`}>
+            <HeaderOptionContainer>
+                <p>{item}</p>
+            </HeaderOptionContainer>
+        </Link>
     )   )   }   
         </HeaderOptionsContainer>
     )

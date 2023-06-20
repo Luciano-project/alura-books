@@ -10,12 +10,15 @@ const HeaderIcon = styled.li`
 const HeaderIcons = styled.ul`
     display: flex;
 `
+
 const icons = [perfil, sacola];
 function Icons() {
     return (
         <HeaderIcons>
             { icons.map( (icon) => (
-                <HeaderIcon><img src={ icon } alt="icon"></img></HeaderIcon>
+                <HeaderIcon>
+                    <img src={ icon } alt="icon"></img>
+                </HeaderIcon>
             )   )   }
         </HeaderIcons>
     );

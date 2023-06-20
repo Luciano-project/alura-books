@@ -2,6 +2,7 @@ import Input from "../Input";
 import styled from "styled-components";
 import { useState } from "react";
 import { books } from './searchData'
+import { Cards } from "../Cards";
 
 const SearchContainer = styled.section`
     background-image: linear-gradient(90deg, #002F52 35%, #326589 165%);
@@ -25,10 +26,8 @@ const SubTitle = styled.h3`
     margin-bottom: 40px;
 `;
 
-const Card = styled.div`
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+const Text = styled.p`
+    margin-bottom: -15px;
 `;
 
 function Search() {
@@ -46,12 +45,15 @@ function Search() {
                     setSearchedBooks(result);
                 }}
             />
-                <Card>{searchedBooks.map((book) => (
-                    <p>{book.title}<br />
-                    <img src={book.src} alt="book logo" /></p>
-                    ))}</Card>
+                <Cards>{searchedBooks.map((book) => (
+                    <p>
+                        <Text>{book.title}</Text>
+                        <br />
+                        <img src={book.src} alt="book logo" />
+                    </p>
+                    ))}
+                </Cards>
         </SearchContainer>
-
     )
 }
 

@@ -1,8 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import App from './App';
+import Home from './routes/Home';
 import reportWebVitals from './reportWebVitals';
 import { createGlobalStyle } from 'styled-components';
+import { BrowserRouter, Routes, Route } from "react-router-dom"
+import Header from './components/Header';
+import Favorites from './routes/Favorites';
 
 const GlobalStyle = createGlobalStyle`
   body {
@@ -23,12 +26,21 @@ const GlobalStyle = createGlobalStyle`
     list-style: none;
   }
 `
-
+// Here we are setting the routes for the pages
+// elemente is the component that will be rendered
+// path is the path that will be used to access the page
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <GlobalStyle />
-    <App />
+    <BrowserRouter>
+    <Header />
+      <Routes>
+        
+        <Route path="/favorites" element={ <Favorites /> } />
+        <Route path="/" element={ <Home /> } />
+      </Routes>
+    </BrowserRouter>
   </React.StrictMode>
 );
 
