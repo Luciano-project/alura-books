@@ -4,31 +4,33 @@ const headerNames = ['CATEGORIES', 'FAVORITES', 'LIBRARY'];
 
 const HeaderOptionsContainer = styled.ul`
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 20px;
+    padding: 0 50px;
+    @media (max-width: 650px) {
+        flex-direction: column;
+        display: none;
+        transition: 0.5s;
+    }
 `
 const HeaderOptionContainer = styled.li`
     font-size: 16px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     height: 100%;
-    min-width: 120px;
     padding: 10px 5px;
     cursor: pointer;
+    justify-content: space-evenly;
+    
 `
 function HeaderOptions()
 {
     return(
-        <HeaderOptionsContainer>
-        { headerNames.map( (item) => (
-        <Link to={`/${ item.toLowerCase() }`}>
-            <HeaderOptionContainer>
-                <p>{item}</p>
-            </HeaderOptionContainer>
-        </Link>
-    )   )   }   
+        <HeaderOptionsContainer id='HeaderOptions'>
+            { headerNames.map( (item) => (
+                <Link style={{ textDecoration: 'none' }} to={`/${ item.toLowerCase() }`}>
+                    <HeaderOptionContainer>
+                        <p>{item}
+                        </p>
+                    </HeaderOptionContainer>
+                </Link>
+            )   )   }   
         </HeaderOptionsContainer>
     )
 }

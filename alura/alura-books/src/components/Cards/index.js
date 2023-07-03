@@ -1,8 +1,6 @@
 import styled from 'styled-components';
 
 export const Cards = styled.div`
-    display: flex;
-    flex-wrap: espace-evenly;
+    flex-shrink: 0;
     justify-content: center;
-    column-gap: 50px;
 `;

@@ -8,20 +8,24 @@ import styled from 'styled-components';
 */
 const LogoDiv = styled.div`
   display: flex;
-  font-size: 30px;
-`	
+  align-items: center;
+
+`	;
 const LogoImg = styled.img`
   margin-left: 10px;
   margin-right: 10px;
-`
+`;
+const LogoText = styled.p`
+  font-size: 30px;
+`;
 function Logo(){
     return (
     <LogoDiv>
         <LogoImg
-        src={logo}
-        alt='logo'
+          src={logo}
+          alt='logo'
         />
-        <p><strong>AluraBooks</strong></p>
+        <LogoText><strong>AluraBooks</strong></LogoText>
 
     </LogoDiv>
     )

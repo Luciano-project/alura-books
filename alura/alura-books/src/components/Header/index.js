@@ -9,17 +9,19 @@ import { Link } from 'react-router-dom'
 const HeaderContainer = styled.header`
     background-color: #ffffff;
     display: flex;
-    justify-content: center;
+    justify-content: space-evenly;
+    width: 100%;
+    height: 100px;
 `
 function Header ()
 {
     return(
         <HeaderContainer>
-            <Link to="/">
-                <Logo />
-            </Link>
-            <HeaderOptions />
-            <HeaderIcons />
+                <Link style={{ textDecoration: 'none' }} to="/">
+                    <Logo />
+                </Link>
+                <HeaderOptions />
+                <HeaderIcons />
         </HeaderContainer>
     )
 }
